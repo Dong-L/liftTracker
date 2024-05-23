@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>LiftTracker</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1>LiftTracker</h1>
+        <form>
+            <fieldset>
+                <legend>Enter the start and end times for your workout</legend>
+                <p>
+                    <label for="start-time">Start time</label>
+                    <input type="time" id="start-time" required />
+                </p>
+                <p>
+                    <label for="end-time">End time</label>
+                    <input type="time" id="end-time" required />
+                </p>
+            </fieldset>
+            <p>
+                <button type="submit">Add Lift</button>
+            </p>
+        </form>
+        <section id="past-lifts">
+            <h2>Past lifts</h2>
+            <ul>
+                <!-- <li>From 07:03 AM to 08:26 AM</li>
+                <li>From 07:14 AM to 08:30 AM</li> -->
+            </ul>
+        </section>
+        <script src="app.js" defer></script> 
+    </body>
+</html>
