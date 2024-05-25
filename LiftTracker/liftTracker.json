@@ -1,0 +1,11 @@
+{
+    "name": "LiftTracker: Workout Tracking app",
+    "short_name": "LT",
+    "description": "Securely track your workouts. Enter your start and end times and look back at previous workouts to see your progress.",
+    "start_url": "/",
+    "theme_color": "#eeffee",
+    "background_color": "#eeffee",
+    "display": "standalone"
+}
+
+  
