@@ -7,10 +7,10 @@ const pastLiftContainer = document.getElementById("past-lifts");
 const STORAGE_KEY = "lift-tracker";
 
 // Listen to form submissions.
-newLiftFormEl.addEventListener("submit", () => {
+newLiftFormEl.addEventListener("submit", (event) => {
     // Prevent the form from submitting to the server
     // since everything is client-side
-    preventDefault();
+    event.preventDefault();
 
     // Get the start and end times from the form.
     const startTime = startTimeInputEl.value;
@@ -105,12 +105,19 @@ function renderPastLifts() {
 }
 
 function formatTime(timeString) {
-    // Convert the time string to Time object
-    const time = new Date(timeString);
+    // Convert the time string into hours and minutes
+    const [hours, minutes] = timeString.split(":");
+
+    // Create a new Date object with a fixed date and the provided time
+    const time = new Date(1970, 0, 1, hours, minutes);
+
+    if (isNaN(time)) {
+        return "Invalid Date";
+    }
 
     // Format the time into a locale-specific string.
     // include your locale for better user experience
-    return time.toLocalTimeString("en-US", { timeZone: "EST" });
+    return time.toLocaleTimeString("en-US", { hour: '2-digit', minute: '2-digit', hour12: true });
 }
 
 renderPastLifts();
